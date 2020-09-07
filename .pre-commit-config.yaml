@@ -1,0 +1,30 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.0.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+        args: ['--maxkb=2000']
+    -   id: check-executables-have-shebangs
+-   repo: https://github.com/psf/black
+    rev: 19.3b0
+    hooks:
+    -   id: black
+-   repo: https://github.com/pre-commit/mirrors-isort
+    rev: v4.3.21
+    hooks:
+    -   id: isort
+        exclude: (^layers/.*\.py|^AshNazg/.*\.py)
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.750
+    hooks:
+    -   id: mypy
+        name: MyPy [ew-common]
+        files: ^ew_common/.*\.py
+    # -   id: mypy
+    #     name: MyPy [AshNazg]
+    #     files: ^AshNazg/.*\.py

@@ -1,0 +1,10 @@
+{
+  "count": 19,
+  "next": "https://events.mobilizeamerica.io/api/v1/organizations/3510/events?event_types=COMMUNITY&event_types=HOUSE_PARTY&exclude_full=true&max_dist=50&page=2&per_page=3&timeslot_end=lte_1564545600&timeslot_start=gte_1564488000&zipcode=94801",
+  "previous": null,
+  "data": null,
+  "metadata": {
+      "url_name": "public_organization_events"
+  },
+  "is_custom_domain": false
+}

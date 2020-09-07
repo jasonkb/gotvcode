@@ -1,0 +1,41 @@
+{
+  "dev": {
+    "app_function": "toes_app.app",
+    "aws_region": "us-east-2",
+    "base_path": "dev",
+    "project_name": "toes",
+    "debug": true,
+    "runtime": "python3.8",
+    "s3_bucket": "zappa-bidentown-toes",
+    "log_level": "DEBUG",
+    "extra_permissions": [{
+      "Effect": "Allow",
+      "Action": ["ssm:GetParameter"],
+      "Resource": "*",
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["cloudwatch:PutMetricData"],
+      "Resource": "*",
+    },
+    ],
+    "environment_variables": {
+      "INFRASTRUCTURE": "dev",
+
+      "MOBILE_COMMONS_USERNAME": "ssm:MOBILE_COMMONS_USERNAME",
+      "MOBILE_COMMONS_PASSWORD": "ssm:MOBILE_COMMONS_PASSWORD",
+    },
+    "timeout_seconds": 900
+  },
+  "prod": {
+    "extends": "dev",
+    "debug": false,
+    "base_path": "prod",
+    "environment_variables": {
+      "INFRASTRUCTURE": "prod",
+
+      "MOBILE_COMMONS_USERNAME": "ssm:MOBILE_COMMONS_USERNAME",
+      "MOBILE_COMMONS_PASSWORD": "ssm:MOBILE_COMMONS_PASSWORD",
+    }
+  },
+}

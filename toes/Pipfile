@@ -1,0 +1,55 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+freezegun = "==0.3.12"
+moto = "==1.3.8"
+pytest = "==4.5.0"
+pytest-flask = "==0.15.0"
+responses = "==0.10.6"
+isort = "*"
+pylint = "*"
+
+[packages]
+boto3 = "==1.9.177"
+bsdapi = {git = 'https://github.com/bluestatedigital/bsd-api-python'}
+contentful = "==1.12.3"
+gunicorn = "==19.9.0"
+nameparser = "==1.0.4"
+phonenumberslite = "==8.10.22"
+pynamodb = "==4.3.3"
+python-dateutil = "==2.6.1"
+pytz = "==2019.1"
+xmltodict = "==0.12.0"
+zappa = "==0.51.0"
+Flask = "==1.0.3"
+Flask-Cors = "==3.0.8"
+lambda_packages = "==0.20.0"
+lxml = "==4.4.2"
+ew_common = {path = "./../ew_common",editable = true}
+zipcodes = "*"
+google-api-python-client = "*"
+google-auth-httplib2 = "*"
+google-auth-oauthlib = "*"
+oauth2client = "*"
+python-dynamodb-lock = "*"
+# We have to pin to an older version of zenpy because after this it
+# requires future >= 0.17, which is incompatible with Zappa's pinned
+# 0.16.0 dependency. Future versions of zappa will loosen this requirement
+# so we can use a new version of zenpy.
+zenpy = "==2.0.8"
+twilio = "*"
+pyjwt = "*"
+Werkzeug = "==0.16.1"
+
+# See: https://github.com/httplib2/httplib2/issues/156
+httplib2 = "<0.16.0"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+server="./run_dev_server.sh toes_app.py"
+test="./run_tests.sh"
