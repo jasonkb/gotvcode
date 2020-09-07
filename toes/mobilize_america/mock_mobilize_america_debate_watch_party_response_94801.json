@@ -1,0 +1,73 @@
+{
+    "count": 19,
+    "next": "https://events.mobilizeamerica.io/api/v1/organizations/3510/events?event_types=COMMUNITY&event_types=HOUSE_PARTY&exclude_full=true&max_dist=50&page=2&per_page=3&timeslot_end=lte_1564545600&timeslot_start=gte_1564488000&zipcode=94801",
+    "previous": null,
+    "data": [
+        {
+            "accessibility_status": null,
+            "timeslots": [
+                {
+                    "is_full": false,
+                    "id": 583056,
+                    "end_date": 1564542000,
+                    "start_date": 1564531200
+                }
+            ],
+            "featured_image_url": "https://mobilizeamerica.imgix.net/uploads/organization/DSC08473_20190715223800295346.jpg",
+            "description": "Join us to cheer on Elizabeth in her second debate. We’ll be gathering to talk about Elizabeth’s vision for big structural change in this country!\r\n\r\nSnacks and drinks will be provided so please RSVP so we know you can make it. All are welcome!",
+            "timezone": "America/Los_Angeles",
+            "created_date": 1563499989,
+            "virtual_action_url": null,
+            "address_visibility": "PUBLIC",
+            "title": "Berkeley Elizabeth Warren Debate Watch Party, part 2",
+            "browser_url": "https://events.elizabethwarren.com/event/103621/",
+            "event_type": "HOUSE_PARTY",
+            "high_priority": false,
+            "visibility": "PUBLIC",
+            "accessibility_notes": null,
+            "sponsor": {
+                "is_primary_campaign": true,
+                "is_independent": false,
+                "created_date": 1552425919,
+                "modified_date": 1564009614,
+                "state": "",
+                "district": "",
+                "org_type": "CAMPAIGN",
+                "is_coordinated": true,
+                "id": 1316,
+                "candidate_name": "Elizabeth Warren",
+                "slug": "elizabethwarren",
+                "name": "Warren for President",
+                "race_type": "PRESIDENTIAL",
+                "event_feed_url": "https://events.elizabethwarren.com/"
+            },
+            "contact": null,
+            "summary": "",
+            "location": {
+                "venue": "",
+                "address_lines": [
+                    "2132 Jefferson Ave",
+                    ""
+                ],
+                "locality": "Berkeley",
+                "region": "CA",
+                "country": "US",
+                "postal_code": "94703",
+                "location": {
+                    "latitude": 37.868893,
+                    "longitude": -122.278913
+                },
+                "congressional_district": "13",
+                "state_leg_district": "15",
+                "state_senate_district": "9"
+            },
+            "modified_date": 1563901033,
+            "id": 103621,
+            "created_by_volunteer_host": true
+        }
+    ],
+    "metadata": {
+        "url_name": "public_organization_events"
+    },
+    "is_custom_domain": false
+}
