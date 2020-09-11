@@ -1,0 +1,52 @@
+<p>
+{% set refcode = 'email-20200220-gotv_event_invite-v2s1' %}
+{% set event_csv_timeslot_urls = custom_dataset.custom_dataset(&#39;g_event_csv_timeslot_urls&#39;, &#39;event_csv_timeslot_urls&#39;) %}{% set event_timeslot_urls = event_csv_timeslot_urls | split('|') %}{% set event_start_times = custom_dataset.custom_dataset(&#39;g_event_csv_start_times&#39;, &#39;event_csv_start_times&#39;) | split('|') %}{% set event_city = custom_dataset.custom_dataset(&#39;g_event_city&#39;, &#39;event_city&#39;) %}{% if event_city %}{% set event_city_or_your_area = event_city %}{% else %}{% set event_city_or_your_area = &#39;your area&#39; %}{% endif %}{% set event_title = custom_dataset.custom_dataset(&#39;g_event_title&#39;, &#39;event_title&#39;) %}{% set event_addr1 = custom_dataset.custom_dataset(&#39;g_event_addr1&#39;, &#39;event_addr1&#39;) %}{% set event_state = custom_dataset.custom_dataset(&#39;g_event_state&#39;, &#39;event_state&#39;) %}{% set event_zip = custom_dataset.custom_dataset(&#39;g_event_zip&#39;, &#39;event_zip&#39;) %}{% set event_start_timestamp_local = custom_dataset.custom_dataset(&#39;g_event_start_timestamp_local&#39;, &#39;event_start_timestamp_local&#39;) %}{% set event_formatted_start_times = custom_dataset.custom_dataset(&#39;g_event_formatted_start_times&#39;, &#39;event_formatted_start_times&#39;) %}{% set event_url = custom_dataset.custom_dataset(&#39;g_event_url&#39;, &#39;event_url&#39;) %}{% set ask_amts = [10,25,50] %}{% set hpc_max = min(hpc_raw | round, 45) %}{% set hpc_clean = hpc_raw - 5 %}{% set hpc_75 = 0.75 * hpc_raw %}{% if cons.firstname and not cons.inConsGroup(3814) %}%%firstname%% &mdash;<br />
+	<br />
+  {% else %}{% endif %}It’s going to take all of us to make big, structural change a reality for families here in %%STATE_NAME(your state)%%, and we need you in this fight now more than ever.</p>
+
+<p style="font-size: 22px"><strong>When can Elizabeth count on you to knock on doors this weekend in {{ event_city_or_your_area }}?</strong></p>
+
+<center>
+	<table>
+		<tbody>
+			<tr>
+				<td align="center" bgcolor="#ffffff" width="450">
+					<table cellpadding="0" cellspacing="12" style="margin:auto; border=0">
+						<tbody>
+              {% if event_url %}
+                {% set button_color = '#232444' %}
+                {% set text_color = '#FFFFFF' %}
+                <tr>
+                  <td align="center" bgcolor="{{ button_color }}" style="-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; font-family: 'Roboto Condensed', 'Roboto', sans-serif; color: {{ text_color }}; font-weight: bold;">
+                    <a href="{{ event_url }}?utm_source={{ refcode }}-bt&amp;email=%%email%%&amp;first_name=%%firstname%%&amp;last_name=%%lastname%%&amp;zip=%%zip%%" style="padding: 15px; mso-padding-alt: 6px 6px; display: block; text-decoration: none; border: 5px solid {{ button_color }}; text-align: center; font-weight: bold; font-size: 23px; color: {{ text_color }}; mso-line-height-rule: exactly;">RSVP NOW</a>
+                  </td>
+                </tr>
+              {% else %}
+                <tr>
+                  <td align="center" bgcolor="#232444" style="-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; font-family: 'Roboto Condensed', 'Roboto', sans-serif; color: #ffffff; font-weight: bold;">
+                    <a href="https://events.elizabethwarren.com/?is_virtual=false&amp;utm_source={{ refcode }}&amp;email=%%email%%&amp;first_name=%%firstname%%&amp;last_name=%%lastname%%&amp;zip=%%zip%%" name="URL2" style="font-size: 23px; font-family: 'Roboto Condensed', 'Roboto', sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; display: inline-block; line-height:150%; -webkit-border-radius:3px;width: 260px;padding:15px;" target="_blank"><strong>FIND AN EVENT</strong></a>
+                  </td>
+                </tr>
+              {% endif %}
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</center>
+
+
+<p>
+	<br />
+	<strong><a href="{% if event_url %}{{ event_url }}?{% else %}https://events.elizabethwarren.com/?is_virtual=false&amp;{% endif %}&amp;utm_source={{ refcode }}-p1&amp;email=%%email%%&amp;first_name=%%firstname%%&amp;last_name=%%lastname%%&amp;zip=%%zip%%">The conversations we have with undecided voters before polls close could make all the difference on Election Night. </a></strong><br />
+	<br />
+	<strong><a href="{% if event_url %}{{ event_url }}?{% else %}https://events.elizabethwarren.com/?is_virtual=false&amp;{% endif %}utm_source={{ refcode }}-p2&amp;email=%%email%%&amp;first_name=%%firstname%%&amp;last_name=%%lastname%%&amp;zip=%%zip%%">We can&#39;t afford to wake up the morning after the %%STATE_NAME%% primary wishing we&#39;d done more. This couldn&rsquo;t be more important{% if cons.firstname and not cons.inConsGroup(3814) %}, %%firstname%%{% else %}{% endif %}. If we can count on you to help Get Out the Vote, click here to sign up for a time that works for you.</a></strong><br />
+	<br />
+	We&rsquo;re knocking doors every day, so no matter how busy your schedule is, there&rsquo;s a time that could work for you. And with your help, we&rsquo;ll dream big, fight hard, and finish strong on Tuesday night.<br />
+	<br />
+	Thank you for knocking doors with us{% if cons.firstname and not cons.inConsGroup(3814) %}, %%firstname%%{% else %}{% endif %}.<br />
+	<br />
+	Team Warren</p>
+<p>
+	&nbsp;</p>
